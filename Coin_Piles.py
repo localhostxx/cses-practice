@@ -1,10 +1,11 @@
 tcs = int(input())
 
 for _ in range(tcs):
-    l, r = map(int, input().split())
-    if l == 0 and r == 0:
-        print("YES")
-    elif l == 0 or r == 0:
+    l,r = map(int, input().split())
+    min_rounds, flag = (l+r)//3, (l+r)%3 == 0
+    
+    if (l < min_rounds or r < min_rounds) or (not flag):
         print("NO")
     else:
-        print("YES" if (l+r)%3 == 0 else "NO")
+        print("YES")
+        
