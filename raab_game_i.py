@@ -2,7 +2,7 @@ tcs = int(input())
 for _ in range(tcs):
     n, a, b = (map(int, input().split()))
     
-    if  a+b > n or a+b == 1 or a == n or b == n:
+    if  a+b > n or (a == 0 or b == 0) and not (a==0 and b==0):
         print("NO")
     else:
         cards = [card+1 for card in reversed(range(a+b))]
